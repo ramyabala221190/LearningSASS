@@ -1,0 +1,5 @@
+@mixin general-button($bg-color){
+    padding:5px;
+    border-radius: 5px;
+    background-color: $bg-color;
+}

@@ -1,3 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  background-color: lightblue;
+}
+
+.general-box, .learning-inheritance, .learning-mixin {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 5px;
+}
+
+.general-text, .normal-text, .error-text, .fatal-text {
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+/** SASS Mixins. Use it for dynamic styles. In other scenarios use @extends**/
+.accept-btn {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: green;
+}
+
+.cancel-btn {
+  padding: 5px;
+  border-radius: 5px;
   background-color: red;
+}
+
+/** SASS Inheritance **/
+.error-text, .fatal-text {
+  color: red;
+}
+
+.fatal-text {
+  font-weight: bold;
 }/*# sourceMappingURL=styles.css.map */

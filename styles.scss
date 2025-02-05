@@ -1,5 +1,61 @@
-$color:red;
+@import '_variables.scss';
+@import '_mixins.scss';
+
+//Usage of variables
+
+*{
+    box-sizing: border-box;
+}
 
 body{
-    background-color: $color;
+   background-color: $bgColor;
+}
+
+//Below are the classes we are going to extend
+
+.general-box{
+    width:100%;
+    height:auto;
+    border:1px solid black;
+    padding:5px;
+    margin:5px;
+}
+
+.general-text{
+    font-size:12px;
+    text-decoration: underline;
+}
+
+/** SASS Mixins. Use it for dynamic styles. In other scenarios use @extends**/
+
+.accept-btn{
+    @include general-button($success-color)
+}
+
+.cancel-btn{
+    @include general-button($danger-color)
+}
+
+/** SASS Inheritance **/
+
+.learning-mixin{
+    @extend .general-box;
+ }
+ 
+ .learning-inheritance{
+     @extend .general-box;
+ }
+
+.normal-text{
+    @extend .general-text;
+}
+
+.error-text{
+    @extend .normal-text; // inherits .normal-text and .general-text
+    color:red;
+}
+
+.fatal-text{
+    @extend .error-text; // inherits .normal-text,.error-text and .general-text
+    font-weight: bold;
 }
