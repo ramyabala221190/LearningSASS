@@ -1,5 +1,26 @@
-@mixin general-button($bg-color){
-    padding:5px;
+
+@mixin general-button($bg-color,$text-color,$border...){
     border-radius: 5px;
     background-color: $bg-color;
+    color:$text-color;
+    border:$border;
+    @content;
+}
+
+@mixin set-font-size($size){
+   @if $size < 5px{
+    font-size: 10px;
+   }
+   @else{
+    font-size: $size;
+   }
+}
+
+@mixin set-rainbow-colors($colorIndex,$colors...){
+   @each $color in $colors{
+      $i: index($colors,$color);
+      @if $colorIndex == #{$i} {
+        background-color: #{$color};
+      }
+   }
 }

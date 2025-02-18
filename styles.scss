@@ -1,5 +1,5 @@
-@import '_variables.scss';
-@import '_mixins.scss';
+@use '_variables.scss' as *;
+@use '_mixins.scss' as *;
 
 //Usage of variables
 
@@ -13,7 +13,7 @@ body{
 
 //Below are the classes we are going to extend
 
-.general-box{
+%general-box{
     width:100%;
     height:auto;
     border:1px solid black;
@@ -21,33 +21,34 @@ body{
     margin:5px;
 }
 
-.general-text{
+%general-text{
     font-size:12px;
     text-decoration: underline;
 }
 
+
 /** SASS Mixins. Use it for dynamic styles. In other scenarios use @extends**/
 
 .accept-btn{
-    @include general-button($success-color)
+    @include general-button($success-color,darkgreen,1px solid yellow){
+        padding:10px
+    }
 }
 
 .cancel-btn{
-    @include general-button($danger-color)
+    @include general-button($danger-color,orange, 1px solid brown){
+        padding:20px;
+    }
 }
 
 /** SASS Inheritance **/
 
-.learning-mixin{
-    @extend .general-box;
+.learning-mixin,.if-condition,.learning-inheritance,.for-condition{
+    @extend %general-box;
  }
  
- .learning-inheritance{
-     @extend .general-box;
- }
-
-.normal-text{
-    @extend .general-text;
+ .normal-text{
+    @extend %general-text;
 }
 
 .error-text{
@@ -58,4 +59,23 @@ body{
 .fatal-text{
     @extend .error-text; // inherits .normal-text,.error-text and .general-text
     font-weight: bold;
+}
+
+.large-font{
+    @include set-font-size(20px);
+}
+
+.small-font{
+    @include set-font-size(3px);
+}
+
+.for-condition{
+    @for $i from 1 through 7{
+        div.color-box-#{$i}{
+            width:100px;
+            height:100px;
+            @include set-rainbow-colors(#{$i},darkviolet,indigo,blue,green,yellow,orange,red)
+      }  
+    }
+   
 }
