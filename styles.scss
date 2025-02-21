@@ -8,7 +8,7 @@
 }
 
 body{
-   background-color: $bgColor;
+   background-color: var(--bg-color);
 }
 
 //Below are the classes we are going to extend
@@ -30,13 +30,13 @@ body{
 /** SASS Mixins. Use it for dynamic styles. In other scenarios use @extends**/
 
 .accept-btn{
-    @include general-button($success-color,darkgreen,1px solid yellow){
+    @include general-button(var(--success-color),darkgreen,1px solid yellow){
         padding:10px
     }
 }
 
 .cancel-btn{
-    @include general-button($danger-color,orange, 1px solid brown){
+    @include general-button(var(--danger-color),orange, 1px solid brown){
         padding:20px;
     }
 }

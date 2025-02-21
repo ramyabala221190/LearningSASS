@@ -76,6 +76,18 @@ $border-dark: rgba($base-color, 0.88); // calculating based on $base-color
   border: 1px solid $border-dark; //using the variable
 }
 
+Instead of SASS variables, we have used CSS variables in the _variables.scss
+Because it is defined inside :root, it is globally available everywhere.
+It can be accessed using var().
+
+:root{
+    --danger-color:red;
+    --success-color:green;
+    --bg-color:lightblue;
+}
+In angular you can define something like this in the styles.scss file to be used
+anywhere in the application
+
 -----------------------------------------------------------------------------------------------------------
 Mixins 
 
@@ -187,7 +199,7 @@ So in the below example @content will be replaced with padding:10px;
 The {} after the mixin name in the @include is only required if you want to pass some style content to the mixin.
 
 -------------------------------------------------------------------------------------------------------
-IF condition
+@if and @else condition
 
 Using the IF condition inside the mixin to set the default font size for font size less than 5px
 
@@ -229,6 +241,8 @@ FOR LOOP EACH Loop
 
 -------------------------------------------------------------------------------------------------------
 Accessibility
+
+https://dev.to/polgarj/a-short-guide-to-help-you-pick-the-correct-html-tag-56l9
 
 When designing your web page, the first step is to define its regions. These are helpful for assistive technology users. They enable people to understand the overall structure of the content and move from section to section quickly.
 Using the right HTML5 tags to structure your page makes it easier to understand and read using assistive technologies, creating a better user experience.

@@ -1,0 +1,56 @@
+footer, div[role=footer], main aside, div[role=main] aside, main section article, main section div[role=article], main div[role=section] article, main div[role=section] div[role=article], div[role=main] section article, div[role=main] section div[role=article], div[role=main] div[role=section] article, div[role=main] div[role=section] div[role=article], main, div[role=main], header, div[role=heading] {
+  border: 1px solid black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: auto;
+  height: auto;
+}
+
+header, div[role=heading] {
+  display: flex;
+  width: 100%;
+  height: 30vh;
+}
+header img, div[role=heading] img {
+  width: auto;
+  height: auto;
+}
+header nav, header div[role=navigation], div[role=heading] nav, div[role=heading] div[role=navigation] {
+  display: flex;
+}
+header nav ul.navigation-links, header div[role=navigation] ul.navigation-links, div[role=heading] nav ul.navigation-links, div[role=heading] div[role=navigation] ul.navigation-links {
+  width: 50%;
+  height: auto;
+  display: flex;
+  list-style-type: none;
+}
+
+main, div[role=main] {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+}
+main section, main div[role=section], div[role=main] section, div[role=main] div[role=section] {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+}
+main section article, main section div[role=article], main div[role=section] article, main div[role=section] div[role=article], div[role=main] section article, div[role=main] section div[role=article], div[role=main] div[role=section] article, div[role=main] div[role=section] div[role=article] {
+  width: auto;
+  height: 100%;
+}
+main aside, div[role=main] aside {
+  width: auto;
+  height: 100%;
+}
+
+footer, div[role=footer] {
+  width: 100%;
+  height: 30vh;
+}/*# sourceMappingURL=aria.css.map */

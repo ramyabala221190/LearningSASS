@@ -1,0 +1,65 @@
+@mixin box-attributes($width,$height){
+  width:$width;
+  height: $height;
+}
+
+%general-box{
+    border:1px solid black;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    @include box-attributes(auto,auto);
+}
+
+header,div[role="heading"]{
+    display:flex;
+    @extend %general-box;
+    @include box-attributes(100%, 30vh);
+    img{
+        width:auto;
+        height:auto;
+    }
+    nav,div[role="navigation"]{
+        display:flex;
+        ul.navigation-links{
+            @include box-attributes(50%, auto);
+            display:flex;
+            list-style-type: none;
+        }
+    }
+}
+
+
+main,div[role="main"]{
+@extend %general-box;
+@include box-attributes(100%, 60vh);
+display:flex;
+
+section,div[role="section"]{
+    display:flex;
+    flex-direction: column;
+    @include box-attributes(50%, auto);
+
+article,div[role="article"]{
+    @extend %general-box;
+    @include box-attributes(auto, 100%);
+}
+}
+
+aside{
+    @extend %general-box;
+    @include box-attributes(auto, 100%);
+}
+
+
+}
+
+footer,div[role="footer"]{
+    @extend %general-box;
+    @include box-attributes(100%, 30vh);
+}
